@@ -7,7 +7,7 @@ Unfortunately, at the moment, this proxy fixer can only fix proxies which return
 For example, this proxy won't get fixed :
 
     static int myProxy() {
-    return 1 + 1;
+    	return 1 + 1;
     } 
 
 But I'm doing my best to update it asap :)
