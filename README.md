@@ -1,4 +1,5 @@
 
+
 # Jomtek's Universal Proxy-Remover
 ![enter image description here](https://i.imgur.com/e5L9Txf.png)
 
@@ -6,7 +7,7 @@ Unfortunately, at the moment, this proxy fixer can only fix proxies which return
 For example, this proxy won't get fixed :
 
     static int myProxy() {
-    	return 1 + 1;
+    return 1 + 1;
     } 
 
 But I'm doing my best to update it asap :)
@@ -15,13 +16,13 @@ But I'm doing my best to update it asap :)
 When we're talking about IL code and .NET reverse engineering, a "proxy" is an intermediate method to a value.
 Quick example
 
-       	static void main(string[] args) {
-	        Console.WriteLine(myProxy());
-        }
-        
-       	static int myProxy() {
-       		return "hello!;
-        }
+    static void main(string[] args) {
+    	Console.WriteLine(myProxy());
+    }
+    
+    static int myProxy() {
+    	return "hello!;
+    }
 
 
 As you can see, proxies can make values harder to read. Now imagine this applied to thousands of values, submersed in thousands of lines of code...
@@ -30,21 +31,21 @@ As you can see, proxies can make values harder to read. Now imagine this applied
 Obviously, proxies can call other proxies, which will then call other proxies... That's why I added a "depth" setting on this proxy remover. Quick example of a depth 2 proxified code. 
 
     static void main(string[] args) {
-    	Console.WriteLine(myProxy());
+	    Console.WriteLine(myProxy());
     }
     
     static int myProxy() {
-    	return anotherProxy();
+	    return anotherProxy();
     }
     
     static int anotherProxy() {
-    	return "hello!";
+	    return "hello!";
     }
 
 <br>Result after proxy removal :
 
     static void main(string[] args) {
-    	Console.WriteLine("hello!");
+	    Console.WriteLine("hello!");
     }
 
 # Credits
