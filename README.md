@@ -1,8 +1,6 @@
 
 
 # Jomtek's Universal Proxy-Remover
-![enter image description here](https://i.imgur.com/e5L9Txf.png)
-
 Unfortunately, at the moment, this proxy fixer can only fix proxies which return literal values.
 For example, this proxy won't get fixed :
 
